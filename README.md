@@ -36,10 +36,11 @@ This VS Code environment is specifically setup for Capture The Flag (CTF) challe
 
 4. **Rebuild in Container:**
    - Open the Command Palette (`CMD+Shift+P` on Mac, `Ctrl+Shift+P` on Windows/Linux).
-   - Type and select `Remote-Containers: Rebuild and Reopen in Container`.
-*Note! VS Code may automatically ask you to Rebuild and Reopen in container.*
+   - Type and select `Remote-Containers: Rebuild and Reopen in Container`. 
 
-2. **Open RealVNC Viewer** on your local machine:
+   *Note! VS Code may automatically ask you to Rebuild and Reopen in container.*
+
+5. **Open RealVNC Viewer** on your local machine:
     - Sign in to your RealVNC account (or create a new account) to get Lite/Free version.
     - Connect to `localhost:5901`.
     - Enter Password: `parrot` *(or as defined in Dockerfile)*.
