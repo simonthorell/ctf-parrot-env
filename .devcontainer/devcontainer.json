@@ -6,8 +6,16 @@
     },
 
     "runArgs": [
-        "--network=host"
+        "--network=host", 
+        "--privileged"
     ],
+
+    // For VNC in order to use GUI applications
+    "forwardPorts": [5901], 
+
+    "containerEnv": {
+        "DISPLAY": ":1"
+    },
 
     "customizations": {
         "vscode": {
@@ -20,5 +28,8 @@
 				"bierner.markdown-preview-github-styles" // Markdown Preview
             ]
         }
-    }
+    },
+
+    // Run the startVNC.sh script after the container is created
+    "postCreateCommand": "bash .devcontainer/start_vnc.sh"
 }
