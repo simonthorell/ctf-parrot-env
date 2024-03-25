@@ -2,6 +2,7 @@
 
 # This script installs Miniforge and SageMath in a new Conda environment.
 # After installation, use 'conda activate sage' to start using SageMath.
+# To deactivate the environment, use 'conda deactivate'.
 
 MINIFORGE_INSTALL_DIR="/opt/miniforge3"
 PROFILE_PATH="/etc/profile"

@@ -1,5 +1,9 @@
 # Sample SageMath Script: example.sage
 
+# Before running SageMath script, make sure sage is activated: 
+# Activate in terminal with 'conda activate sage'
+# Deactivate in terminal with 'conda deactivate'
+
 # Arithmetic operations
 a = 8
 b = 3

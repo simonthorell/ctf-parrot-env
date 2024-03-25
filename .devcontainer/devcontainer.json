@@ -25,11 +25,12 @@
             "extensions": [
                 "ms-python.python",                      // Python
                 "tal7aouy.icons",                        // Custom Icons
-				"bierner.markdown-preview-github-styles" // Markdown Preview
+				"bierner.markdown-preview-github-styles",// Markdown Preview
+                "Lov3.sagemath-enhanced"                 // SageMath
             ]
         }
     },
 
-    // Run the startVNC.sh script after the container is created
+    // Run the start_vnc.sh script after the container is created
     "postCreateCommand": "bash .devcontainer/start_vnc.sh"
 }
