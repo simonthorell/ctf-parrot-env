@@ -33,17 +33,17 @@ RUN wget $GHIDRA_URL -O /tmp/ghidra.zip \
 ###############################################################################
 # General tools:    git, curl
 # Java 11:          openjdk-17-jdk (required for Ghidra)
-# Wireshark:        xauth, wireshark
-# VNC Server:       tightvncserver, x11-apps, fluxbox
-
+# VNC Server:       tigervnc, x11-apps, fluxbox (tightvncserver not working wireshark)
+# Wireshark:        xauth, xvfb, wireshark
 RUN apt-get update && apt-get install -y \
     git \
     curl \
     openjdk-17-jdk \
-    tightvncserver \
+    tigervnc-standalone-server \
     x11-apps \
     fluxbox \
-    xauth \ 
+    xauth \
+    xvfb \
     wireshark \
     # Clear cache
     && rm -rf /var/lib/apt/lists/*
@@ -83,3 +83,11 @@ RUN mkdir /root/.vnc
 RUN echo $VNC_PASSWORD | vncpasswd -f > /root/.vnc/passwd
 RUN chmod 600 /root/.vnc/passwd
 EXPOSE 5901
+
+#==============================================================================
+# Wireshark Specific Setup
+#==============================================================================
+# Set the display environment variable
+ENV XDG_RUNTIME_DIR=/tmp/runtime-root
+# Ensure the directory exists and is writable by any user
+RUN mkdir -p $XDG_RUNTIME_DIR && chmod 777 $XDG_RUNTIME_DIR
