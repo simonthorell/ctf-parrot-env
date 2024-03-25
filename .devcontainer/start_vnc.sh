@@ -1,4 +1,6 @@
 #!/bin/bash
+
+# Set X11 display variables
 export USER=root
 export DISPLAY=:1
 
