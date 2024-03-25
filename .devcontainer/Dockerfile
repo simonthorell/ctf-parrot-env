@@ -28,6 +28,11 @@ RUN wget $GHIDRA_URL -O /tmp/ghidra.zip \
     && echo "#!/bin/bash\n/opt/ghidra_11.0.1_PUBLIC/ghidraRun \"\$@\"" > /bin/ghidraRun \
     && chmod +x /bin/ghidraRun
 
+# Install SageMath (using script)
+COPY .devcontainer/install_sagemath.sh /tmp/install_sagemath.sh
+RUN chmod +x /tmp/install_sagemath.sh
+RUN /tmp/install_sagemath.sh
+
 #==============================================================================
 # Update & Install Container Tools
 #==============================================================================
